@@ -65,93 +65,41 @@
 		  </li> -->
 		  
 		  <li>
-			<a href="./addnewlead.php" class="">
+			<a href="./blog.php" class="">
             <div class="parent-icon">
 				<i class="bi bi-pencil-square"></i>
 			  </div>
-			  <div class="menu-title">Add New Lead</div>
-			</a>
-		  </li>
-
-		  <li>
-			<a href="./mylead.php" class="">
-            <div class="parent-icon">
-				<i class="lni lni-notepad"></i>
-			  </div>
-			  <div class="menu-title">My Lead</div>
-			</a>
-		  </li>
-
-		  <li>
-			<a href="./todayreminder.php" class="">
-            <div class="parent-icon">
-				<i class="lni lni-alarm-clock"></i>
-			  </div>
-			  <div class="menu-title">Today Reminder </div>
+			  <div class="menu-title">Blog</div>
 			</a>
 		  </li>
 
 		  <li>
 			<a href="./index.php" class="">
             <div class="parent-icon">
-				<i class="bi bi-person"></i>
+				<i class="lni lni-notepad"></i>
 			  </div>
-			  <div class="menu-title">Follow Up</div>
+			  <div class="menu-title">Clients</div>
 			</a>
 		  </li>
 
 		  <li>
-			<a href="./interested.php" class="">
+			<a href="./reviews.php" class="">
             <div class="parent-icon">
-				<i class="lni lni-checkmark"></i>
+				<i class="lni lni-notepad"></i>
 			  </div>
-			  <div class="menu-title">Interested</div>
+			  <div class="menu-title">Reviews</div>
 			</a>
 		  </li>
 
 		  <li>
-			<a href="./notinterested.php" class="">
+			<a href="./profile.php" class="">
             <div class="parent-icon">
-              <i class="lni lni-close"></i>
-            </div>
-			  <div class="menu-title">Not Interested</div>
-			</a>
-		  </li>
-
-		  <li>
-			<a href="./payment_received.php" class="">
-            <div class="parent-icon">
-			<i class="lni lni-rupee"></i>
-            </div>
-			  <div class="menu-title">Payment Received</div>
-			</a>
-		  </li>
-
-		  <li>
-			<a href="./completed.php" class="">
-            <div class="parent-icon">
-              <i class="lni lni-emoji-cool"></i>
-            </div>
-			  <div class="menu-title"> Completed</div>
-			</a>
-		  </li>
-
-		  <li>
-			<a href="./assigned_leads.php" class="">
-            <div class="parent-icon">
-              <i class="lni lni-share"></i>
-            </div>
-			  <div class="menu-title">Assigned Leads</div>
-			</a>
-		  </li>
-
-			<a href="./support.php" target="_blank">
-			  <div class="parent-icon">
-				<i class="bi bi-headset"></i>
+				<i class="lni lni-alarm-clock"></i>
 			  </div>
-			  <div class="menu-title">Support</div>
+			  <div class="menu-title">Profile </div>
 			</a>
 		  </li>
+
 		</ul>
 		<!--end navigation-->
 	  </aside>

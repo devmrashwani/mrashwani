@@ -2864,6 +2864,11 @@ html::-webkit-scrollbar-track {
     width: 90px;
 }
 
+.logo-img {
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px white;
+}
+
 .svg {
     height: 100px;
     width: 100px;

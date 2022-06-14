@@ -73,7 +73,7 @@
 			<!-- logo image -->
 			<div class="site-logo">
 				<a href="index.php">
-					<img src="./images/uploaded/Aklogo.jpg" alt="AK logo" />
+					<img class="logo-img" src="./images/uploaded/Aklogo.jpg" alt="AK logo" />
 				</a>
 			</div>
 		</div>
@@ -416,7 +416,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-4 mt-2">
+					<div class="col-md-4 mt-4">
 						<!-- service box -->
 						<div class="service-box rounded data-background padding-30 text-center text-dark shadow-yellow" data-color="#E4CD70">
 							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -777,30 +777,35 @@
 				<!-- testimonials wrapper -->
 				<div class="testimonials-wrapper">
 
-					<!-- testimonial item -->
-					<div class="testimonial-item text-center mx-auto">
-						<h4 class="mt-3 mb-0">John Doe</h4>
-						<span class="subtitle">Product designer at Dribbble</span>
-						<div class="bg-dark padding-30 shadow-light rounded triangle-top position-relative mt-4">
-							<p class="mb-0">I enjoy working with the theme and learn so much. You guys make the process fun and interesting. Good luck! 👍</p>
+				<?php
+										include("./include/db_connect.php");
+
+										$query = "SELECT * FROM reviews";
+										$result = mysqli_query($conn, $query);
+
+										while ($row = mysqli_num_rows($result)) {
+										
+
+					// <!-- testimonial item -->
+					echo "
+					<div class='testimonial-item text-center mx-auto'>
+						<h4 class='mt-3 mb-0'>".$row['r_name']." </h4>
+						<span class='subtitle'>".$row['who']." </span>
+						<div class='bg-dark padding-30 shadow-light rounded triangle-top position-relative mt-4'>
+							<p class='mb-0'>".$row['review']."</p>
 						</div>
 					</div>
-
-					<!-- testimonial item -->
-					<div class="testimonial-item text-center mx-auto">
-						<h4 class="mt-3 mb-0">John Doe</h4>
-						<span class="subtitle">Product designer at Dribbble</span>
-						<div class="bg-dark padding-30 shadow-light rounded triangle-top position-relative mt-4">
-							<p class="mb-0">I enjoy working with the theme and learn so much. You guys make the process fun and interesting. Good luck! 🔥</p>
-						</div>
-					</div>
-
+					";
+				}
+										
+										
+				?>
 				</div>
 			</div>
 
 		</section>
 		<div class="mt-4 add-review">
-						<a href="#contact" class="btn btn-default">Add Reviews</a>
+						<a href="./addreviews.php" class="btn btn-default">Add Reviews</a>
 					</div>
 
 		<!-- section blog -->

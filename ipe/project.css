@@ -1,0 +1,763 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', sans-serif;
+}
+
+html::-webkit-scrollbar {
+    width: .4vw;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: rgb(203,65,84);
+    border-radius: 20px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+
+.intro {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+}
+
+.intro h2 {
+    font-size: 100px;
+}
+
+.auto-input {
+
+    color: rgb(203,65,84); 
+}
+
+a {
+    color: rgb(203,65,84); 
+ text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --heading-font-size: 80px;
+    --para-font-size: 40px;
+    --a-font-size: 25px;
+}
+
+.flex {
+    display: flex;
+    /* border: 2px solid red; */
+}
+
+.navbar {
+    height: max-content;
+    width: 100%;
+    display: flex;
+}
+
+.navbar div {
+    margin-top: 40px;
+    margin-left: 80px;
+}
+
+.logo {
+    height: 80px;
+    width: 100px;
+    /* border: 2px solid black; */
+}
+
+.navbar ul {
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+.navbar ul li {
+    margin: 55px;
+    padding: 5px;
+    /* margin-left: 10px; */
+}
+
+.navbar ul li:hover {
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, #ff0000, #f36300, #de9200, #c3b700, #a1d600, #76dd53, #48e183, #00e2ac, #00c7d9, #00a5ff, #0079ff, #0003ff);
+    border-image-slice: 1;
+}
+
+.navbar ul li:checked {
+    border-bottom: 5px solid;
+    /* border-color: red; */
+}
+
+.section1 {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.heading1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    height: 700px;
+    font-size: var(--heading-font-size);
+    padding: 5%;
+    width: 30%;
+}
+.img1 {
+    height:800px;
+    width: 900px;
+   text-shadow: 0px 0px 10px black;
+}
+.img2 {
+    height:600px;
+    width: 700px;
+   text-shadow: 0px 0px 10px black;
+}
+
+.image1 {
+    padding-left: 120px;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+
+
+.para1 {
+    padding-top: 100px;
+    padding-right: 60px;
+    text-align: right;
+    font-size: var(--para-font-size);
+}
+
+.section3 {
+    box-shadow: 0px 0px 8px black;
+    height: 800px;
+    background-color: rgba(0, 0, 0, 0.192);
+    transition: all 0.3s ease;
+}
+
+.section3:hover {
+    transform: scale(1.03);
+}
+
+.s3heading {
+    font-size: var(--heading-font-size);
+    margin: 80px;
+}
+
+.content {
+    width: 700px;
+    height: max-content;
+    padding: 20px;
+    margin-left: 80px;
+    background-color: white;
+    font-size: var(--para-font-size);
+    box-shadow: 20px 20px 0px black;
+}
+
+.he2::before {
+    height: 420px;
+}
+
+.section4 {
+    height: 500px;
+    width: 100%;
+}
+
+.para2 {
+    font-weight: bold;
+    padding: 80px;
+    text-align: justify;
+    font-size: var(--para-font-size);
+}
+
+.bg {
+   
+    background: no-repeat center center/cover url(./assests/bg1.jpg);
+}
+.bg h2 {
+    color: white;
+
+}
+.bg1 {
+   
+    background: no-repeat center center/cover url(./assests/b2.jpg);
+}
+
+
+
+/* Our Programs */
+
+.ourpro {
+    height: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.pordiv {
+    width: 80%;
+    margin: auto;
+    padding: 50px;
+}
+
+.pordiv h1 {
+    margin-top: 100px;
+    font-size: var(--heading-font-size);
+}
+
+.pordiv p {
+    font-size: var(--para-font-size);
+}
+.p {
+    border-top-right-radius:50%;
+    border-bottom-right-radius:50%;
+    background: no-repeat center center/cover url(./assests/howtoinnovation_1200xx2716-1530-0-279.jpg);
+}
+
+.p-image {
+   
+    z-index: 1;
+    filter: contrast(1.5);
+    
+    /* box-shadow: 0px 0px 8px; */
+    transition: all 0.3s ease;
+}
+
+.p-image:hover {
+    transform: scale(1.03);
+}
+
+.p1 {
+    border-top-left-radius:50%;
+    border-bottom-left-radius:50%;
+    background: no-repeat center center/cover url(./assests/spain-top-country-for-entrepreneurship.jpg) !important;
+}
+.p2 {
+    border-top-right-radius:50%;
+    border-bottom-right-radius:50%;
+    background: no-repeat center center/cover url(./assests/Shaza_Article_Pic.jpg) !important;
+}
+.p3 {
+    border-top-left-radius:50%;
+    border-bottom-left-radius:50%;
+    background: no-repeat center center/cover url(./assests/Shaza_Article_Pic.jpg) !important;
+}
+
+
+.p-content {
+    padding: 20px;
+    width: 50%;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.des {
+    height: 800px;
+}
+
+.p-content h2 {
+    margin-bottom: 20px;
+    font-size: var(--heading-font-size);
+}
+
+.p-content p {
+    font-size: var(--para-font-size);
+}
+
+.p-content a,
+.b-content a,
+.blog a {
+    font-size: var(--a-font-size);
+    text-decoration: none;
+    color: black;
+    border: 2px solid;
+    border-radius: 35px;
+    border-image: linear-gradient(to right, #ff0000, #f36300, #de9200, #c3b700, #a1d600, #76dd53, #48e183, #00e2ac, #00c7d9, #00a5ff, #0079ff, #0003ff);
+    border-image-slice: 1;
+    width: max-content;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.p-content a:hover,
+.b-content a:hover,
+.blog a:hover {
+    border: 1px;
+    background-image: linear-gradient(to right, #ff0000, #f36300, #de9200, #c3b700, #a1d600, #76dd53, #48e183, #00e2ac, #00c7d9, #00a5ff, #0079ff, #0003ff);
+}
+
+.p-c2 {
+    text-align: right !important;
+    justify-content: right !important;
+    align-items: right !important;
+}
+
+.p-c2 a {
+    margin-left: 450px;
+}
+
+
+/* Blog  */
+
+.blog-section1 {
+    height: 650px;
+}
+
+.b-content {
+    width: 50%;
+    padding-left: 80px;
+    padding-top: 80px;
+}
+
+.b-content h2 {
+    font-size: var(--heading-font-size);
+}
+
+.cat {
+    font-size: 15px !important;
+    margin-bottom: 5px !important;
+}
+
+.b-content p {
+    font-size: var(--para-font-size);
+    margin-bottom: 50px;
+}
+
+.b-content a {
+    margin-top: 150px !important;
+}
+
+.blogs {
+    padding: 80px;
+    padding-left: 150px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 130px;
+    column-gap: 30px;
+}
+
+.blog a {
+    font-size: 20px !important;
+    padding: 10px !important;
+}
+
+.blog {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.blog img {
+    height: 350px;
+    width: 550px;
+    /* border: 2px solid red; */
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.blog span {
+    font-size: 18px;
+    margin: 10px;
+}
+
+.blog h2 {
+    font-size: 30px !important;
+    margin: 5px;
+}
+
+.blog p {
+    font-size: 20px !important;
+    margin: 5px;
+}
+
+.b-image {
+    height: 500px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 8px black;
+    width: 50%;
+    background: no-repeat center center/cover url(./assests/entrepreneurship.webp);
+    transition: all 0.3s ease;
+}
+
+.b-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 12px black;
+}
+
+
+.image2 {
+    z-index: -2;
+    transition: all 0.3s ease;
+}
+
+.image2:hover {
+    transform: scale(1.03);
+}
+
+
+.shapes1 img ,.shapes2 img , .shapes3 img , .shapes4 img{
+    z-index: -1;
+    position: absolute;
+    opacity: 0.8;
+}
+
+
+.shapes1 img:nth-child(1){
+    height: 30px;
+    width: 30px;
+    top: 800px;
+    left: 100px;
+}
+.shapes1 img:nth-child(2){
+    height: 60px;
+    width: 60px;
+    top: 1000px;
+    left: 500px;
+}
+.shapes1 img:nth-child(3){
+    height: 30px;
+    width: 30px;
+    top: 900px;
+    left: 70px;
+}
+.shapes1 img:nth-child(4){
+    rotate: 180deg;
+    height: 60px;
+    width: 60px;
+    top: 750px;
+    left: 450px;
+}
+.shapes1 img:nth-child(5){
+    height: 30px;
+    width: 30px;
+    top: 850px;
+    left: 200px;
+}
+.shapes1 img:nth-child(6){
+    height: 60px;
+    width: 60px;
+    top: 890px;
+    left: 430px;
+}
+.shapes1 img:nth-child(7){
+    height: 30px;
+    width: 30px;
+    top: 825px;
+    left: 350px;
+}
+.shapes1 img:nth-child(8){
+    height: 60px;
+    width: 60px;
+    top: 900px;
+    left: 250px;
+}
+.shapes1 img:nth-child(9){
+    height: 30px;
+    width: 30px;
+    top: 950px;
+    left: 150px;
+}
+.shapes1 img:nth-child(10){
+    height: 60px;
+    width: 60px;
+    top: 1000px;
+    left: 20px;
+}
+
+/* shapes of program  */
+
+.shapes2 img {
+    position: absolute;
+}
+
+.shapes2 img:nth-child(1){
+    height: 80px;
+    width: 80px;
+    top: 400px;
+    left: 100px;
+}
+.shapes2 img:nth-child(2){
+    height: 100px;
+    width: 100px;
+    top: 500px;
+    left: 400px;
+}
+.shapes2 img:nth-child(3){
+    height: 80px;
+    width: 80px;
+    top: 600px;
+    left: 150px;
+}
+.shapes2 img:nth-child(4){
+    rotate: 180deg;
+    height: 60px;
+    width: 60px;
+    top: 650px;
+    left: 20px;
+}
+.shapes2 img:nth-child(5){
+    height: 30px;
+    width: 30px;
+    top: 200px;
+    left: 600px;
+}
+.shapes2 img:nth-child(6){
+    height: 60px;
+    width: 60px;
+    top: 500px;
+    left: 600px;
+}
+.shapes2 img:nth-child(7){
+    height: 30px;
+    width: 30px;
+    top: 600px;
+    left: 500px;
+}
+.shapes2 img:nth-child(8){
+    height: 100px;
+    width: 100px;
+    top: 800px;
+    left: 600px;
+}
+.shapes2 img:nth-child(9){
+    height: 100px;
+    width: 100px;
+    top: 500px;
+    left: 100px;
+}
+.shapes2 img:nth-child(10){
+    height: 160px;
+    width: 160px;
+    top: 600px;
+    left: 600px;
+}
+
+
+
+
+
+
+.shapes3 img:nth-child(1){
+    height: 80px;
+    width: 80px;
+    top: 1800px;
+    left: 100px;
+}
+.shapes3 img:nth-child(2){
+    height: 60px;
+    width: 60px;
+    top: 1100px;
+    left: 500px;
+}
+.shapes3 img:nth-child(3){
+    height: 60px;
+    width: 60px;
+    top: 1900px;
+    left: 70px;
+}
+.shapes3 img:nth-child(4){
+    rotate: 180deg;
+    height: 60px;
+    width: 60px;
+    top: 750px;
+    left: 450px;
+}
+.shapes3 img:nth-child(5){
+    height: 50px;
+    width: 50px;
+    top: 1850px;
+    left: 200px;
+}
+.shapes3 img:nth-child(6){
+    height: 60px;
+    width: 60px;
+    top: 1890px;
+    left: 430px;
+}
+.shapes3 img:nth-child(7){
+    height: 70px;
+    width: 70px;
+    top: 1825px;
+    left: 350px;
+}
+.shapes3 img:nth-child(8){
+    height: 60px;
+    width: 60px;
+    top: 1900px;
+    left: 250px;
+}
+.shapes3 img:nth-child(9){
+    height: 80px;
+    width: 80px;
+    top: 1950px;
+    left: 150px;
+}
+.shapes3 img:nth-child(10){
+    height: 60px;
+    width: 60px;
+    top: 1100px;
+    left: 20px;
+}
+
+
+
+.shapes4 img:nth-child(1){
+    height: 80px;
+    width: 80px;
+    top: 1800px;
+    left: 100px;
+}
+.shapes4 img:nth-child(2){
+    height: 60px;
+    width: 60px;
+    top: 1100px;
+    left: 500px;
+}
+.shapes4 img:nth-child(3){
+    height: 60px;
+    width: 60px;
+    top: 1900px;
+    left: 70px;
+}
+.shapes4 img:nth-child(4){
+    rotate: 180deg;
+    height: 60px;
+    width: 60px;
+    top: 1750px;
+    left: 450px;
+}
+.shapes4 img:nth-child(5){
+    height: 50px;
+    width: 50px;
+    top: 1850px;
+    left: 200px;
+}
+.shapes4 img:nth-child(6){
+    height: 60px;
+    width: 60px;
+    top: 1890px;
+    left: 430px;
+}
+.shapes4 img:nth-child(7){
+    height: 70px;
+    width: 70px;
+    top: 1825px;
+    left: 350px;
+}
+.shapes4 img:nth-child(8){
+    height: 60px;
+    width: 60px;
+    top: 1900px;
+    left: 250px;
+}
+.shapes4 img:nth-child(9){
+    height: 80px;
+    width: 80px;
+    top: 1950px;
+    left: 150px;
+}
+.shapes4 img:nth-child(10){
+    height: 60px;
+    width: 60px;
+    top: 1100px;
+    left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer section  */
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    height: max-content;
+    width: 100%;
+    background: rgb(18,28,59);
+}
+
+.footer div {
+    width: 25%;
+    padding: 35px;
+}
+.footer h2 {
+    color: rgb(203,65,84);
+    margin-bottom: 10px;
+}
+.footer h4 {
+    color: white;
+    margin-top: 10px;
+    bottom: 10px;
+}
+.footer p {
+    color: rgba(255, 255, 255, 0.705);
+    margin-top: 10px;
+    bottom: 10px;
+}
+.color-r {
+    color: rgb(203,65,84);
+}
+
+.footer2 {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 10px;
+    background: rgb(18,28,59);
+    color: white;
+}
+
+.footer-div4 .fa-brands{
+    font-size: 25px;
+    margin-right: 10px;
+}
