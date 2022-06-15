@@ -130,6 +130,9 @@ $sql = "INSERT INTO `reviews` (`r_name`, `who`, `review`) VALUES ('$r_name', '$w
 if($result){
 
     echo '<script>alert(" ❤ Thank You ❤ So much for Your Contribution 👌.")</script>';
+    ?>
+    <meta http-equiv="Refresh" content="0; URL=localhost/mrashwani/index.php#review">
+    <?php
 }
 else {
     echo '<script>alert("Holly Crab 😧😦 My Code Giving you a F🤬🤬king Error While Your Precious Review... Contact me I am Gonna fix that.")</script>';
@@ -166,7 +169,7 @@ else {
 
 					<div class="col-md-8">
 						<!-- Contact Form -->
-						<form id="" class="contact-form mt-6" method="post">
+						<form action="" class="contact-form mt-6" method="post">
 
 							<div class="messages"></div>
 

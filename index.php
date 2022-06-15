@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>AK || UI/UX designer, Full-Stack developer, Teacher</title>
-	<meta name="description" content="Bolby - Portfolio/CV/Resume HTML Template">
+	<meta name="description" content="Ashwani - Portfolio/CV/Resume HTML Template">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="./images/uploaded/Aklogo.jpg">
 
@@ -783,7 +783,7 @@
 										$query = "SELECT * FROM reviews";
 										$result = mysqli_query($conn, $query);
 
-										while ($row = mysqli_num_rows($result)) {
+										while ($row = mysqli_fetch_assoc($result)) {
 										
 
 					// <!-- testimonial item -->
@@ -805,7 +805,7 @@
 
 		</section>
 		<div class="mt-4 add-review">
-						<a href="./addreviews.php" class="btn btn-default">Add Reviews</a>
+						<a href="./addreviews.php" id="review" class="btn btn-default">Add Reviews</a>
 					</div>
 
 		<!-- section blog -->
@@ -820,72 +820,43 @@
 
 				<div class="row blog-wrapper">
 
-					<div class="col-md-4">
-						<!-- blog item -->
-						<div class="blog-item rounded bg-dark shadow-light wow fadeIn">
-							<div class="thumb">
-								<a href="#">
-									<span class="category">Reviews</span>
-								</a>
-								<a href="#">
-									<img src="https://via.placeholder.com/330x215" alt="blog-title" />
-								</a>
-							</div>
-							<div class="details">
-								<h4 class="my-0 title"><a href="#">5 Best App Development Tool for Your Project</a></h4>
-								<ul class="list-inline meta mb-0 mt-2">
-									<li class="list-inline-item">09 February, 2020</li>
-									<li class="list-inline-item">Bolby</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+				<?php 
+include("./include/db_connect.php");
+ $sql = "SELECT * FROM `blogs` LIMIT 3";
+ $result = mysqli_query($conn, $sql);
+ while ($row = mysqli_fetch_assoc($result)) {
+     echo " 
 
-					<div class="col-md-4">
+                <a href='./exploreblog.php?id=".$row['s_no']."'>
+					<div class='col-md-4'>
 						<!-- blog item -->
-						<div class="blog-item rounded bg-dark shadow-light wow fadeIn">
-							<div class="thumb">
-								<a href="#">
-									<span class="category">Tutorial</span>
-								</a>
-								<a href="#">
-									<img src="https://via.placeholder.com/330x215" alt="blog-title" />
-								</a>
-							</div>
-							<div class="details">
-								<h4 class="my-0 title"><a href="#">Common Misconceptions About Payment</a></h4>
-								<ul class="list-inline meta mb-0 mt-2">
-									<li class="list-inline-item">07 February, 2020</li>
-									<li class="list-inline-item">Bolby</li>
+						<div class='blog-item rounded bg-dark shadow-light wow fadeIn'>
+							<div class='thumb'>
+									<span class='category'>".$row['category']."</span>
+									<img src='./captain".$row['image']."' alt='blog-Image' />
+									</div>
+									
+							<div class='details'>
+								<h4 class='my-0 title'>".$row['title']."</h4>
+								<ul class='list-inline meta mb-0 mt-2'>
+									<li class='list-inline-item'>".$row['date']."</li>
+									<li class='list-inline-item'>".$row['author']."</li>
 								</ul>
 							</div>
 						</div>
 					</div>
+					</a>
+					";
+ }
 
-					<div class="col-md-4">
-						<!-- blog item -->
-						<div class="blog-item rounded bg-dark shadow-light wow fadeIn">
-							<div class="thumb">
-								<a href="#">
-									<span class="category">Business</span>
-								</a>
-								<a href="#">
-									<img src="https://via.placeholder.com/330x215" alt="blog-title" />
-								</a>
-							</div>
-							<div class="details">
-								<h4 class="my-0 title"><a href="#">3 Things To Know About Startup Business</a></h4>
-								<ul class="list-inline meta mb-0 mt-2">
-									<li class="list-inline-item">06 February, 2020</li>
-									<li class="list-inline-item">Bolby</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+					?>
 
 				</div>
 
 			</div>
+			<div class="mt-4 add-review">
+						<a href="./blog.php" id="review" class="btn btn-default"> View All</a>
+					</div>
 
 		</section>
 

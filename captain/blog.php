@@ -1,7 +1,48 @@
 <?php
 include("./include/header.php");
+// session_start();
 
+// if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
+//     $loggedin = true;
+// }
+// else {
+//     $loggedin = false;
+// }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  include("../include/db_connect.php"); 
+  $category = $_POST['category'];
+  $title = $_POST['title'];
+  $summary = $_POST['summary'];
+  $author = $_POST['author'];
+  $date = $_POST['date'];
+  $blog_file = $_FILES["file"];
+
+
+    // for image upload 
+     $filename = $blog_file['name'];
+     $filerror = $blog_file['error'];
+     $filetmp = $blog_file['tmp_name'];
+
+     $fileext = explode('.',$filename);
+     $filecheck = strtolower(end($fileext));
+
+
+    $fileextstored = array('png', 'jpg', 'jpeg');
+
+    if(in_array($filecheck,$fileextstored)){
+        $destinationfile ='./blogimage/'.$filename;
+        move_uploaded_file($filetmp,$destinationfile);
+
+    }
+    $sql = "INSERT INTO `blogs` (`category`, `image`, `title`, `summary`, `date`, `author`) VALUES ('$category', '$destinationfile', '$title', '$summary', '$date', '$author')";
+    $result = mysqli_query($conn, $sql);
+    echo '<script>alert("Sucessfully Posted")</script>';
+
+}
 ?>
+    <script src="./ckeditor/ckeditor.js"></script>
+
 
 
 
@@ -18,146 +59,64 @@ include("./include/header.php");
         <div class="card">
           <div class="card-body">
             <div class="border p-3 rounded">
-              <h6 class="mb-0 text-uppercase"> Add New Lead</h6>
+              <h6 class="mb-0 text-uppercase"> Upload Blog</h6>
               <hr>
-              <form class="row g-3">
+              <form class="row g-3" method="POST" enctype="multipart/form-data" >
                 <div class="col-12">
-                  <label class="form-label">Name</label>
-                  <input type="text" class="form-control">
+                  <label class="form-label">Title</label>
+                  <input type="text" name="title" class="form-control">
                 </div>
                 <div class="col-12">
-                  <label class="form-label">Phone no</label>
-                  <input type="text" class="form-control">
+                  <label class="form-label">Summary</label>
+                  <textarea class="form-control" name="summary" id="blog_desc" cols="80" rows="20" required></textarea>                            
                 </div>
                 <div class="col-12">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control">
+                  <label class="form-label">Image</label>
+                  <input class="form-control" type="file" name="file" id="file" required>
                 </div>
                 <div class="col-12">
-                  <label class="form-label">Service</label>
-                  <input type="text" class="form-control" list="service" placeholder="-- Select --">
-                  <datalist id="service">
-                    <option value="0">-Select-</option>
-                    <option value="Assignment">Assignment</option>
-                    <option value="Dissertation">Dissertation</option>
-                    <option value="Essay Writing">Essay Writing</option>
-                    <option value="Hand-Writing">Hand-Writing</option>
-                    <option value="PHD Thesis Writing">PHD Thesis Writing</option>
-                    <option value="project proposal for business">project proposal for business</option>
-                    <option value="Project report for all course">Project report for all course</option>
-                    <option value="Resume Writing">Resume Writing</option>
-                    <option value="Study-Materials">Study-Materials</option>
-                    <option value="Synopsis">Synopsis</option>
-                    <option value="Exam Notes">Exam Notes</option>
-                    <option value="Synopsis only">Synopsis only</option>
-                    <option value="Project only">Project only</option>
-                    <option value="Assignment project Both">Assignment &amp; project Both</option>
-                    <option value="Content Writing">Content Writing</option>
-                    <option value="SOP Writing">SOP Writing</option>
-                    <option value="Others">Others</option>
-                    <option value="Project &amp; Synopsis both ">Project &amp; Synopsis both </option>
-                    <option value="Synopsis and Project">Synopsis and Project</option>
-                    <option value="Career Consulting">Career Consulting</option>
-                    <option value="Admission">Admission</option>
-                    <option value="SEO Training">SEO Training</option>
-                    <option value="Job Finding Services">Job Finding Services</option>
+                  <label class="form-label">Category</label>
+                  <input type="text" class="form-control" name="category" list="Category" placeholder="-- Select --">
+                  <datalist id="Category">
+                    <option value="Eudcation"></option>
+                    <option value="Error"></option>
+                    <option value="Skill"></option>
+                    <option value="Coding"></option>
                   </datalist>
                 </div>
+              
                 <div class="col-12">
-                  <label class="form-label">University</label>
-                  <input type="text" class="form-control" list="university" placeholder="-- Select --">
-                  <datalist id="university">
-                    <option value="0">-Select-</option>
-                    <option value="amity">AMITY</option>
-                    <option value="ignou">IGNOU</option>
-                    <option value="smu">SMU</option>
-                    <option value="ANNAMALAI">ANNAMALAI</option>
-                    <option value="BVDU">BVDU</option>
-                    <option value="DIMS">DIMS</option>
-                    <option value="IMT">IMT</option>
-                    <option value="ISBM">ISBM</option>
-                    <option value="JNU-JAIPUR">JNU-JAIPUR</option>
-                    <option value="LPU">LPU</option>
-                    <option value="NMIMS">NMIMS</option>
-                    <option value="SYMBOSIS">SYMBOSIS</option>
-                    <option value="VMOU">VMOU</option>
-                    <option value="Others">Others</option></select>
-                  </datalist>
+                  <label class="form-label">Date</label>
+                  <input type="date" name="date" class="form-control">
                 </div>
-                <div class="form-check">
-                  <label class="form-label">Status</label>
-                  <br>
-                  <label class="form-check-label" for="pending">Pending</label>
-                  <input class="form-check-input" type="radio" name="pending" id="pending">
-                  <br>
-                  <label class="form-check-label" for="Followup">Follow Up</label>
-                  <input class="form-check-input" type="radio" name="Followup" id="Followup">
-                  <br>
-                  <label class="form-check-label" for="Payment">Payment Received</label>
-                  <input class="form-check-input" type="radio" name="Payment" id="Payment">
-                </div>
+                
 
                 <div class="col-12">
-                  <label class="form-label">Enter Reminder Date</label>
-                  <input type="date" class="form-control">
+                  <label class="form-label">Author</label>
+                  <input type="text" name="author" class="form-control">
                 </div>
-
-
-                <div class="col-12">
-                  <label class="form-label">Amount Paid</label>
-                  <input type="number" class="form-control">
-                </div>
-
-
-                <div class="col-12">
-                  <label class="form-label">Payment Method</label>
-                  <input type="text" class="form-control" list="payment" placeholder="-- Select --">
-                  <datalist id="payment">
-                    <option value="Paytm">
-                    <option value="UPI">
-                    <option value="Gpay">
-                    <option value="ICICI Bank">
-                  </datalist>
-                </div>
-           
-
-
-            <div class="col-12">
-              <label class="form-label">Payment Date</label>
-              <input type="date" class="form-control">
-            </div>
-
-
-            <div class="col-12">
-              <label class="form-label">Main Requirement</label>
-              <textarea class="form-control" rows="4" cols="4"></textarea>
-            </div>
-
-
-
-            <div class="col-12">
-              <label class="form-label">Writer Message</label>
-              <textarea class="form-control" rows="4" cols="4"></textarea>
-            </div>
-
-            <div class="col-12 mt-3">
+                
+                <div class="col-12 mt-3">
               <div class="d-grid">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </div>
             </div>
-            </form>
-          </div>
+          </form>
         </div>
       </div>
-
     </div>
+    
   </div>
+</div>
 
 
 </div>
 <!-- end page content-->
 </div>
+<script>
+  CKEDITOR.replace('blog_desc');
+</script>
 
 
 
